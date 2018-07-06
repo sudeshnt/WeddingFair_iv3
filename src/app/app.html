@@ -1,0 +1,26 @@
+<!---Settings Main Header-->
+<ion-split-pane when="md">
+  <!-- Menu Main Top -->
+  <ion-menu [content]="content">
+    <ion-header>
+      <div header-background-image padding [ngStyle]="{'background-image': 'url(' + '../assets/images/background/14.jpg' + ')'}">
+        <img src="../assets/images/logo/1.png">
+        <h2 ion-text color="light" header-title>Ionic 3 theme iOS 11 style</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt</p>
+      </div>
+    </ion-header>
+    <!-- Menu Main List -->
+    <ion-content>
+      <ion-list no-margin>
+        <button menuClose ion-item item-title main-menu no-lines border *ngFor="let menuItem of menuList" (click)="openPage(menuItem.page)">
+          <ion-icon icon-small item-left>
+            <i class="icon icon-format-align-justify"></i>
+          </ion-icon>
+          {{menuItem.name}}
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content main swipeBackEnabled="false"></ion-nav>
+</ion-split-pane>

@@ -1,0 +1,27 @@
+<!--Google card components-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-left>Categories Page</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--Content-->
+<ion-content>
+  <!--Theme Google Card - Full Image Cards-->
+  <ion-grid no-padding>
+    <ion-row card-background-page padding-horizontal>
+      <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let i of array">
+        <ion-card background-size text-left
+                  [ngStyle]="{'background-image': 'url(' + 'assets/images/background/0.jpg' + ')'}">
+          <!-- Card Title-->
+          <div text-wrap card-title>Free Ride</div>
+          <!-- Card Subtitle-->
+          <div text-wrap card-subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

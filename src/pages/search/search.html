@@ -1,0 +1,41 @@
+<!-- Theme Search - Field + Header -->
+<ion-header header-ios>
+  <ion-navbar transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title color="secondary" text-left>Search Page</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-padding>
+    <div background-size container-hearder-image [ngStyle]="{'background-image': 'url(' + 'assets/images/background/1.jpg' + ')'}">
+      <div search-bar-bcg>
+        <!-- Header Title -->
+        <h1 ion-text no-margin padding-left search-bar-title>Just type</h1>
+        <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onEvent('onTextChange', $event)"></ion-searchbar>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<!-- Content -->
+<ion-content>
+  <ion-grid no-padding>
+    <ion-row>
+      <!-- List Search-->
+      <ion-col col-12>
+        <ion-list no-margin>
+          <ion-item no-margin border no-lines (click)="onEvent('onItemClick', item)">
+            <ion-thumbnail item-start>
+              <img src="assets/images/avatar/1.jpg">
+            </ion-thumbnail>
+            <!-- Big Title -->
+            <h2 item-title>Grant Marshall</h2>
+            <!-- Description -->
+            <h2 item-subtitle text-wrap>Lorem Ipsum is simply dummy text of the printing</h2>
+            <!-- Badge -->
+            <ion-badge ion-fixed class="badge-light" item-end>GET</ion-badge>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

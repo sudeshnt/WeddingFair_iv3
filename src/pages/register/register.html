@@ -1,0 +1,54 @@
+<!-- Themes Register + logo -->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-left>Register Page</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--Content -->
+<ion-content>
+  <ion-grid>
+    <ion-row padding-horizontal align-items-start>
+      <ion-col col-12 no-padding>
+        <button ion-button text-capitalize button-clear clear float-right >skip</button>
+      </ion-col>
+      <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <!---Logo-->
+        <ion-thumbnail>
+          <img src="assets/images/logo/2.png">
+        </ion-thumbnail>
+        <!--Form Title-->
+        <h1 ion-text color="accent" title>Register your new account</h1>
+        <!---Input field username-->
+        <ion-item no-padding>
+          <ion-label color="dark" stacked>USERNAME</ion-label>
+          <ion-input required placeholder="Enter your username" type="text" [(ngModel)]="user.username"></ion-input>
+        </ion-item>
+        <!---Input field password-->
+        <ion-item no-padding>
+          <ion-label color="dark" stacked>password</ion-label>
+          <ion-input required placeholder="Enter your password" type="password" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+        <!---Input field email-->
+        <ion-item no-padding>
+          <ion-label color="dark" stacked>E-MAIL</ion-label>
+          <ion-input required placeholder="your e-mail address" type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+        <!---Input field country-->
+        <ion-item no-padding>
+          <ion-label color="dark" stacked>COUNTRY</ion-label>
+          <ion-input required placeholder="Where are you from?" type="text" pattern="[a-zA-Z ]*" required [(ngModel)]="user.country"></ion-input>
+        </ion-item>
+        <!---Input field city-->
+        <ion-item no-padding>
+          <ion-label stacked>CITY</ion-label>
+          <ion-input required placeholder="Your home town" type="text" pattern="[a-zA-Z ]*" required [(ngModel)]="user.city"></ion-input>
+        </ion-item>
+        <!---Register button-->
+        <button ion-button margin-top float-right clear button-clear text-capitalize>Register</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

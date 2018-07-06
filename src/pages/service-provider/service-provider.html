@@ -1,0 +1,84 @@
+<!-- Thema Google Maps - Gmaps + About Us-->
+<ion-header header-ios>
+  <ion-navbar transparent [ngClass]="{'active':isClassActive()}">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <!--<ion-title text-left>Service Provider</ion-title>-->
+  </ion-navbar>
+</ion-header>
+<!-- Content -->
+<ion-content elastic-header>
+  <div padding background-size id="elastic-header" [ngStyle]="{'background-image': 'url(' + 'assets/images/background-small/1.jpg' + ')'}">
+    <ion-thumbnail>
+      <img src="assets/images/avatar/3.jpg" />
+    </ion-thumbnail>
+    <!-- Parallx Title -->
+    <h2 text-center parallax-title>Bruce Wilkerson</h2>
+    <!-- Parallx Subtitle -->
+    <h3 text-center parallax-subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+  </div>
+  <!--<div header-section>-->
+    <!--<h1 header-title no-margin padding-left text-wrap>Creative Studio Form</h1>-->
+  <!--</div>-->
+  <ion-grid no-padding>
+    <ion-row>
+      <!---About Name-->
+      <ion-col col-12>
+        <ion-item map-header no-lines>
+          <h1 maps-title text-wrap>Design & Development agency</h1>
+        </ion-item>
+      </ion-col>
+      <!---Content About Us-->
+      <ion-col col-12 map-content transparent>
+        <ion-item-group>
+          <ion-item-divider no-lines>
+            <h2 maps-description-title text-wrap margin-bottom>About us</h2>
+            <p maps-description text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Luctus semper elit platea; Velit aptent euismod pede euismod facilisis? In ultrices venenatis mauris. Consequat gravida pretium ligula lectus; Lacus natoque elit elit: Imperdiet cursus fermentum suspendisse; Cum iaculis venenatis!</p>
+          </ion-item-divider>
+          <!--Info Location-->
+          <ion-item border>
+            <ion-icon icon-medium name="checkmark-circle" item-start></ion-icon>
+            <h2 no-paddnig>Design street, New York, USA</h2>
+          </ion-item>
+          <!--Info Time-->
+          <ion-item border>
+            <ion-icon icon-medium name="checkmark-circle" item-start></ion-icon>
+            <h2 no-paddnig>Design street, New York, USA</h2>
+          </ion-item>
+          <!--Info Phone-->
+          <ion-item border>
+            <ion-icon icon-medium name="checkmark-circle" item-start></ion-icon>
+            <h2 no-paddnig>Design street, New York, USA</h2>
+          </ion-item>
+          <!--Info WebSite-->
+          <ion-item border>
+            <ion-icon icon-medium name="checkmark-circle" item-start></ion-icon>
+            <h2 no-paddnig>Design street, New York, USA</h2>
+          </ion-item>
+          <!--Info Email-->
+          <ion-item border>
+            <ion-icon icon-medium name="checkmark-circle" item-start></ion-icon>
+            <h2 no-paddnig>Design street, New York, USA</h2>
+          </ion-item>
+        </ion-item-group>
+      </ion-col>
+    </ion-row>
+    <!---MAP TEXT-->
+    <ion-row>
+      <ion-col col-12>
+        <ion-item no-lines>
+          <h2 title>Here we are : </h2>
+        </ion-item>
+      </ion-col>
+      <!---MAP-->
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <agm-map [latitude]="data.map.lat" [longitude]="data.map.lng" [zoom]="data.map.zoom" [mapTypeControl]="data.map.mapTypeControl" [streetViewControl]="data.map.streetViewControl">
+          <agm-marker [latitude]="data.map.lat" [longitude]="data.map.lng"></agm-marker>
+        </agm-map>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
