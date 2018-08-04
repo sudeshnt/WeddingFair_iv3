@@ -12,11 +12,11 @@
   <!--Theme Google Card - Full Image Cards-->
   <ion-grid no-padding>
     <ion-row card-background-page padding-horizontal>
-      <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let i of array">
+      <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let category of categories">
         <ion-card background-size text-left
                   [ngStyle]="{'background-image': 'url(' + 'assets/images/background/0.jpg' + ')'}">
           <!-- Card Title-->
-          <div text-wrap card-title>Free Ride</div>
+          <div text-wrap card-title>{{category.name}}</div>
           <!-- Card Subtitle-->
           <div text-wrap card-subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
         </ion-card>

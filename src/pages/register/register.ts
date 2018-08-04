@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { MainConfig } from "../../app/shared/config/main-config";
 
 @IonicPage()
 @Component({
@@ -15,9 +9,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
+  register_type: any = 'customer';
+  categories:Array<any> = [];
   user:any = {};
+  vendor:any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.categories = MainConfig.categoryList;
   }
 
   ionViewDidLoad() {
