@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GalleryModal } from 'ionic-gallery-modal';
+import { ModalController } from 'ionic-angular/components/modal/modal-controller';
 
 @IonicPage()
 @Component({
@@ -76,7 +78,13 @@ export class MediaPage {
     ]
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  images = [{
+    url: `assets/images/gallery/brogan/0.jpg`
+  },{
+    url: `assets/images/gallery/brogan/0.jpg`
+  }];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {}
@@ -86,6 +94,15 @@ export class MediaPage {
     //   'group': group.items,
     //   'index': index
     // });
+  }
+
+  openGallery() {
+    let modal = this.modalCtrl.create(GalleryModal, {
+      photos: this.images,
+      initialSlide: 0,
+      closeIcon: 'back'
+    });
+    modal.present();
   }
 
 }
