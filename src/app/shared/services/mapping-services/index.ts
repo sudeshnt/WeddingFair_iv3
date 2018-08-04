@@ -1,1 +1,1 @@
-export * from './admin-map';
+export * from './category-map';

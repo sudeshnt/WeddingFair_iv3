@@ -31,86 +31,92 @@
         </ion-toolbar>
         <div [ngSwitch]="register_type">
           <div *ngSwitchCase="'customer'">
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Name</ion-label>
-              <ion-input required placeholder="Enter your username" type="text" [(ngModel)]="user.username"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Spouse Name</ion-label>
-              <ion-input required placeholder="Enter your username" type="text" [(ngModel)]="user.username"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>E-MAIL</ion-label>
-              <ion-input required placeholder="your e-mail address" type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [(ngModel)]="user.email"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label stacked>Mobile</ion-label>
-              <ion-input required placeholder="Your home town" type="text" pattern="[a-zA-Z ]*" required [(ngModel)]="user.city"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>password</ion-label>
-              <ion-input required placeholder="Enter your password" type="password" [(ngModel)]="user.password"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Wedding Date</ion-label>
-              <ion-input required placeholder="Where are you from?" type="text" pattern="[a-zA-Z ]*" required [(ngModel)]="user.country"></ion-input>
-            </ion-item>
-            <button ion-button margin-top float-right clear button-clear text-capitalize>Register</button>
+            <form>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Name</ion-label>
+                <ion-input name="name" [(ngModel)]="user.name" required placeholder="enter your name" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Spouse Name</ion-label>
+                <ion-input name="spouseName" [(ngModel)]="user.spouse" required placeholder="name of your spouse" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>E-MAIL</ion-label>
+                <ion-input name="email" [(ngModel)]="user.email" placeholder="your e-mail address" type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                           required></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label stacked>Mobile</ion-label>
+                <ion-input name="mobile" [(ngModel)]="user.mobile" placeholder="your contact" type="text" pattern="[a-zA-Z ]*" required></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>password</ion-label>
+                <ion-input name="password" [(ngModel)]="user.password"  placeholder="your password" type="password"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label>Wedding Date</ion-label>
+                <ion-datetime [name]="'weddingDate'" [(ngModel)]="user.weddingDay" placeholder="your wedding date" displayFormat="MM/DD/YYYY"></ion-datetime>
+              </ion-item>
+              <button type="submit" ion-button margin-top float-right clear button-clear text-capitalize>Register</button>
+            </form>
           </div>
           <div *ngSwitchCase="'vendor'">
             <!--page 1-->
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Shop Name</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Business Category</ion-label>
-              <ion-select [(ngModel)]="employee">
-                <ion-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</ion-option>
-              </ion-select>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Owner's Name</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>E-MAIL</ion-label>
-              <ion-input required placeholder="your e-mail address" type="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label stacked>Mobile</ion-label>
-              <ion-input required placeholder="Your home town" type="text" pattern="[a-zA-Z ]*" required></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>password</ion-label>
-              <ion-input required placeholder="Enter your password" type="password"></ion-input>
-            </ion-item>
-            <!--page 2-->
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Business Reg. Number</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Shop Address</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>City</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Choose Location on Map</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Website</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <ion-item no-padding>
-              <ion-label color="dark" stacked>Social Media Pages</ion-label>
-              <ion-input required placeholder="Enter your username" type="text"></ion-input>
-            </ion-item>
-            <button ion-button margin-top float-right clear button-clear text-capitalize>Register</button>
+            <form>
+              <ion-item no-padding>
+                <ion-label [name]="'shopName'" color="dark" stacked>Shop Name</ion-label>
+                <ion-input required placeholder="enter name of your shop" type="text" [(ngModel)]="vendor.shopName"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Business Category</ion-label>
+                <ion-select [name]="'category'" [(ngModel)]="vendor.category" interface="action-sheet" placeholder="choose category of your shop">
+                  <ion-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Owner's Name</ion-label>
+                <ion-input name="ownerName" placeholder="enter your name" type="text" [(ngModel)]="vendor.name"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>E-MAIL</ion-label>
+                <ion-input name="email" [(ngModel)]="vendor.email" placeholder="your e-mail address" type="email"
+                           pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label stacked>Mobile</ion-label>
+                <ion-input name="mobile" [(ngModel)]="vendor.mobile" placeholder="your contact" type="text" pattern="[a-zA-Z ]*" required></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>password</ion-label>
+                <ion-input name="password" [(ngModel)]="vendor.password" placeholder="enter your password" type="password"></ion-input>
+              </ion-item>
+              <!--page 2-->
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Business Reg. Number</ion-label>
+                <ion-input name="businessRegNumber" [(ngModel)]="vendor.businessRegNumber" placeholder="shop's business reg. number" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Shop Address</ion-label>
+                <ion-input name="shopAddress" [(ngModel)]="vendor.shopAddress" placeholder="address of your shop" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>City</ion-label>
+                <ion-input name="city" [(ngModel)]="vendor.city" placeholder="your home town" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Choose Location on Map</ion-label>
+                <ion-input name="location" [(ngModel)]="vendor.location" placeholder="enter your location" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Website</ion-label>
+                <ion-input name="website" [(ngModel)]="vendor.website" placeholder="enter your username" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-padding>
+                <ion-label color="dark" stacked>Social Media Pages</ion-label>
+                <ion-input name="socialMedia" [(ngModel)]="vendor.socialMediaPages" placeholder="enter social media pages" type="text"></ion-input>
+              </ion-item>
+              <button type="submit" ion-button margin-top float-right clear button-clear text-capitalize>Register</button>
+            </form>
           </div>
         </div>
       </ion-col>

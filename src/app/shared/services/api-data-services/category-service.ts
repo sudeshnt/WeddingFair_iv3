@@ -3,16 +3,19 @@ import { AppConfig, ServiceConfig} from "../../config";
 import { HttpService } from "../../services";
 
 @Injectable()
-export class AdminService {
+export class CategoryService {
 
   constructor(private httpService : HttpService) {}
 
-  //POST
-  public login(req){
+  //GET
+  public getServiceCategories(req){
     let promise = new Promise((resolve, reject) => {
-      return this.httpService.httpPut(AppConfig.GB_API_URL ,ServiceConfig.SAMPLE_SERVICE,"/login", req , null, false).then((data : any) => {
+      return this.httpService.httpGet(AppConfig.API_URL ,ServiceConfig.CATEGORY_MANAGEMENT_SERVICE,"/getServiceCategories",
+        req , null, false)
+      .then((data : any) => {
         resolve(data);
-      }).catch((error : any) => {
+      })
+      .catch((error : any) => {
         resolve(null);
       });
     });
