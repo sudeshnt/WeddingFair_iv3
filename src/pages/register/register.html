@@ -64,8 +64,8 @@
             <!--page 1-->
             <form>
               <ion-item no-padding>
-                <ion-label [name]="'shopName'" color="dark" stacked>Shop Name</ion-label>
-                <ion-input required placeholder="enter name of your shop" type="text" [(ngModel)]="vendor.shopName"></ion-input>
+                <ion-label color="dark" stacked>Shop Name</ion-label>
+                <ion-input [name]="'shopName'" required placeholder="enter name of your shop" type="text" [(ngModel)]="vendor.shopName"></ion-input>
               </ion-item>
               <ion-item no-padding>
                 <ion-label color="dark" stacked>Business Category</ion-label>
