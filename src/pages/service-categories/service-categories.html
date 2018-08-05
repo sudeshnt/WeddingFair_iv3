@@ -11,6 +11,7 @@
 <ion-content>
   <!--Theme Google Card - Full Image Cards-->
   <ion-grid no-padding>
+    <countdown [text]="text" units="Days | Hours | Minutes | Seconds"  end="August 22, 2019"></countdown>
     <ion-row card-background-page padding-horizontal>
       <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let category of categories">
         <ion-card background-size text-left

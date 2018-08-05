@@ -10,6 +10,12 @@ import { MainConfig } from "../../app/shared/config/main-config";
 export class ServiceCategoriesPage {
   categories:Array<any> = [];
   array:Array<any> = [];
+  text:any = {
+    Days: "Days",
+    Hours: "Hrs.",
+    Minutes: "Min.",
+    Seconds: "Sec.",
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     for(let i=0 ; i<10 ; i++){

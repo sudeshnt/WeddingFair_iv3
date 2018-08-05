@@ -10,6 +10,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+
 import { GlobalData, GlobalFunctions, LocalDataService, UserService, HttpService,
   CategoryMap, CategoryService } from "./shared";
 

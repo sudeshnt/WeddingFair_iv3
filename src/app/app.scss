@@ -37,3 +37,35 @@
 [main-menu] .item-inner {
   margin-left: 6px !important;
 }
+
+ .countdown {
+   width: 100%;
+   height: 100px;
+   background: black;
+
+   .two-dots {
+     display: none;
+   }
+
+   .measurements {
+     color: white;
+     margin-right: 5px;
+     padding: 10px;
+     text-align: center;
+   }
+
+   .measurements-number {
+     font-size: 35px;
+     margin-top: 5px;
+     margin-bottom: 0px;
+     font-weight: bold;
+   }
+
+   .measurements-text {
+     font-size: 10px;
+   }
+
+   .divider {
+     font-size: 30px;
+   }
+ }

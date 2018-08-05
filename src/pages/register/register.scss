@@ -26,4 +26,11 @@ page-register {
   [stacked] {
     font-size: 10px !important;
   }
+
+  .segment-button {
+    max-width: none !important;
+  }
+  .segment-button > span {
+    font-size: 15px;
+  }
 }
