@@ -10,9 +10,9 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col no-padding col-4 col-sm-3 col-md-6 col-lg-4 col-xl-3 *ngFor="let item of data.items;let i = index;">
+      <ion-col no-padding col-4 col-sm-3 col-md-6 col-lg-4 col-xl-3 *ngFor="let image of images;let i = index;">
         <!--<img background-size [src]="item.image" class="thumb-img" imageViewer/>-->
-        <ion-card background-size (click)="openGallery()" [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+        <ion-card background-size (click)="openGallery(i)" [ngStyle]="{'background-image': 'url(' + image.url + ')'}">
         </ion-card>
       </ion-col>
     </ion-row>
