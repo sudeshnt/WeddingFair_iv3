@@ -8,10 +8,11 @@ export class CategoryService {
   constructor(private httpService : HttpService) {}
 
   //GET
-  public getServiceCategories(req){
+  public getApprovedServiceCategories(){
     let promise = new Promise((resolve, reject) => {
-      return this.httpService.httpGet(AppConfig.API_URL ,ServiceConfig.CATEGORY_MANAGEMENT_SERVICE,"/getServiceCategories",
-        req , null, false)
+      return this.httpService.httpGet(
+        AppConfig.API_URL ,ServiceConfig.CATEGORY_MANAGEMENT_SERVICE,"/categories/approved", {} ,
+        null, false)
       .then((data : any) => {
         resolve(data);
       })

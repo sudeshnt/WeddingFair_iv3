@@ -14,12 +14,12 @@
     <countdown [text]="text" units="Days | Hours | Minutes | Seconds"  end="August 22, 2019"></countdown>
     <ion-row card-background-page padding-horizontal>
       <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let category of categories">
-        <ion-card background-size text-left
-                  [ngStyle]="{'background-image': 'url(' + 'assets/images/background/0.jpg' + ')'}">
+        <ion-card [ngStyle]="{'background-image': 'url(' + AppConfig.imagesPath + category.imageUrl + ')'}"
+                  [navPush]="'ServiceProvidersPage'" [navParams]="category" background-size text-left>
           <!-- Card Title-->
           <div text-wrap card-title>{{category.name}}</div>
           <!-- Card Subtitle-->
-          <div text-wrap card-subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+          <div text-wrap card-subtitle>{{category.description}}</div>
         </ion-card>
       </ion-col>
     </ion-row>
