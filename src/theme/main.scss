@@ -73,7 +73,7 @@ $palettes: (
     ),
     // Used for blend modes
     blendModes: (
-      primary : #00ff36,
+      primary : #f2f5f0,
       secondary: #23278a
     )
 );
@@ -443,7 +443,7 @@ $item-md-sliding-content-background: theme-colors('mainColors', 'primary');
 // Parallax Settings
 [parallax-title] {
     color: theme-colors('textColors', 'secondaryBase');
-    font-size: font-size-text('h1') !important;
+    font-size: font-size-text('h2') !important;
     font-weight: bold;
     line-height: 34px;
 }

@@ -1,5 +1,6 @@
 import { Component,Input, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
+import { AppConfig } from "../../app/shared/config";
 
 @IonicPage()
 @Component({
@@ -7,16 +8,19 @@ import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
   templateUrl: 'service-providers.html',
 })
 export class ServiceProvidersPage {
+  AppConfig: any = AppConfig;
+
   @Input() events: any;
 
   @ViewChild(Content)
   content: Content;
   active: boolean;
-  headerImage:any = "";
+  headerImage: any = "";
 
+  serviceCategory: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+    this.serviceCategory = this.navParams.data;
   }
 
   ionViewDidLoad(){

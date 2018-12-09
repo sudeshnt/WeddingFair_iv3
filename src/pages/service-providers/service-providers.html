@@ -11,13 +11,13 @@
 
 <ion-content elastic-header>
   <!-- Parallax Big Image -->
-  <div background-size id="elastic-header" [ngStyle]="{'background-image': 'url(' + 'assets/images/background-small/5.jpg' + ')'}">
+  <div background-size id="elastic-header" [ngStyle]="{'background-image': 'url(' + AppConfig.imagesPath + serviceCategory.imageUrl + ')'}">
     <!--Parallax Header Top-->
     <div parallax-header>
       <!--Parallax Subtitle -->
       <!--Parallax Title -->
-      <h2 no-margin parallax-title>Studio</h2>
-      <h2 no-margin parallax-subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h2>
+      <h3 no-margin parallax-title>{{serviceCategory.name}}</h3>
+      <h2 no-margin parallax-subtitle>{{serviceCategory.description}}</h2>
     </div>
   </div>
   <!--Content-->
