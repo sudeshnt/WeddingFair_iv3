@@ -17,7 +17,9 @@
       <!--Parallax Subtitle -->
       <!--Parallax Title -->
       <h3 no-margin parallax-title>{{serviceCategory.name}}</h3>
-      <h2 no-margin parallax-subtitle>{{serviceCategory.description}}</h2>
+      <h2 no-margin parallax-subtitle>
+        {{serviceCategory.description.length > 150 ? serviceCategory.description.substring(0, 150) + '...' : serviceCategory.description}}
+      </h2>
     </div>
   </div>
   <!--Content-->
@@ -25,61 +27,13 @@
     <ion-row>
       <ion-col col-12>
         <ion-list no-margin>
-          <ion-item item-bcg border no-lines>
+          <ion-item item-bcg border no-lines *ngFor="let serviceProvider of serviceProviders">
             <!--Content Avatar-->
             <ion-thumbnail item-start>
-              <img src="assets/images/avatar/0.jpg" alt="avatar">
+              <img [src]="AppConfig.imagesPath + serviceProvider.logoUrl" alt="avatar">
             </ion-thumbnail>
             <!--Content Title-->
-            <h2 no-margin item-title>Grant Marshall</h2>
-            <!--Content Subtitle-->
-            <h3 item-subtitle text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <!--Content Badge-->
-            <ion-badge class="badge-light" item-end>READ</ion-badge>
-          </ion-item>
-          <ion-item item-bcg border no-lines>
-            <!--Content Avatar-->
-            <ion-thumbnail item-start>
-              <img src="assets/images/avatar/1.jpg" alt="avatar">
-            </ion-thumbnail>
-            <!--Content Title-->
-            <h2 no-margin item-title>Grant Marshall</h2>
-            <!--Content Subtitle-->
-            <h3 item-subtitle text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <!--Content Badge-->
-            <ion-badge class="badge-light" item-end>READ</ion-badge>
-          </ion-item>
-          <ion-item item-bcg border no-lines>
-            <!--Content Avatar-->
-            <ion-thumbnail item-start>
-              <img src="assets/images/avatar/2.jpg" alt="avatar">
-            </ion-thumbnail>
-            <!--Content Title-->
-            <h2 no-margin item-title>Grant Marshall</h2>
-            <!--Content Subtitle-->
-            <h3 item-subtitle text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <!--Content Badge-->
-            <ion-badge class="badge-light" item-end>READ</ion-badge>
-          </ion-item>
-          <ion-item item-bcg border no-lines>
-            <!--Content Avatar-->
-            <ion-thumbnail item-start>
-              <img src="assets/images/avatar/3.jpg" alt="avatar">
-            </ion-thumbnail>
-            <!--Content Title-->
-            <h2 no-margin item-title>Grant Marshall</h2>
-            <!--Content Subtitle-->
-            <h3 item-subtitle text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <!--Content Badge-->
-            <ion-badge class="badge-light" item-end>READ</ion-badge>
-          </ion-item>
-          <ion-item item-bcg border no-lines>
-            <!--Content Avatar-->
-            <ion-thumbnail item-start>
-              <img src="assets/images/avatar/4.jpg" alt="avatar">
-            </ion-thumbnail>
-            <!--Content Title-->
-            <h2 no-margin item-title>Grant Marshall</h2>
+            <h2 no-margin item-title>{{serviceProvider.name}}</h2>
             <!--Content Subtitle-->
             <h3 item-subtitle text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <!--Content Badge-->

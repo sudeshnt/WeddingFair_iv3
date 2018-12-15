@@ -11,7 +11,7 @@
 <ion-content>
   <!--Theme Google Card - Full Image Cards-->
   <ion-grid no-padding>
-    <countdown [text]="text" units="Days | Hours | Minutes | Seconds"  end="August 22, 2019"></countdown>
+    <!--<countdown [text]="text" units="Days | Hours | Minutes | Seconds"  end="August 22, 2019"></countdown>-->
     <ion-row card-background-page padding-horizontal>
       <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let category of categories">
         <ion-card [ngStyle]="{'background-image': 'url(' + AppConfig.imagesPath + category.imageUrl + ')'}"
@@ -19,7 +19,9 @@
           <!-- Card Title-->
           <div text-wrap card-title>{{category.name}}</div>
           <!-- Card Subtitle-->
-          <div text-wrap card-subtitle>{{category.description}}</div>
+          <div text-wrap card-subtitle *ngIf="category.description">
+            {{category.description.length > 130 ? category.description.substring(0, 130) + '...' : category.description}}
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>

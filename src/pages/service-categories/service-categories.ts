@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MainConfig } from "../../app/shared/config/main-config";
+import { MainConfig } from '../../app/shared/config/main-config';
 import { CategoryService } from "../../app/shared/services/api-data-services";
 import { AppConfig } from "../../app/shared/config";
 
@@ -34,10 +34,11 @@ export class ServiceCategoriesPage {
   }
 
   private initServiceCategories() {
-    this.categoryService.getApprovedServiceCategories().then((response: any) => {
-      console.log(response);
-      this.categories = response.data;
-    })
+    this.categoryService.getApprovedServiceCategories().subscribe((response: any) => {
+      if (response) {
+        this.categories = response.data;
+      }
+    });
   }
 
 }

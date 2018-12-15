@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AppConfig, ServiceConfig} from "../../config";
 import { HttpService } from "../../services";
+import { catchError, map } from "rxjs/operators";
+import {_throw} from "rxjs/observable/throw";
 
 @Injectable()
 export class CategoryService {
@@ -9,18 +11,17 @@ export class CategoryService {
 
   //GET
   public getApprovedServiceCategories(){
-    let promise = new Promise((resolve, reject) => {
-      return this.httpService.httpGet(
-        AppConfig.API_URL ,ServiceConfig.CATEGORY_MANAGEMENT_SERVICE,"/categories/approved", {} ,
-        null, false)
-      .then((data : any) => {
-        resolve(data);
-      })
-      .catch((error : any) => {
-        resolve(null);
-      });
-    });
-    return promise;
+    const path = '/categories/approved';
+    return this.httpService.httpGet(ServiceConfig.CATEGORY_MANAGEMENT_SERVICE, path, {}, null).pipe(
+      map(
+        (res: any) => {
+          return res;
+        }
+      ),
+      catchError(
+        (error: any) =>
+          _throw(error)
+      ));
   }
 
 }

@@ -5,5 +5,10 @@ export class ServiceConfig {
     ROUTE_PATH : '/category_service'
   };
 
+  public static VENDOR_MANAGEMENT_SERVICE = {
+    NAME : 'Vendor Management Service',
+    ROUTE_PATH : '/service_provider_service'
+  };
+
 }
 

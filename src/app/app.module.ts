@@ -17,7 +17,8 @@ import { HomePage } from '../pages/home/home';
 
 
 import { GlobalData, GlobalFunctions, LocalDataService, UserService, HttpService,
-  CategoryMap, CategoryService } from "./shared";
+  CategoryMap, CommonMapService,
+  CategoryService, VendorService } from "./shared";
 
 const SERVICES = [
   GlobalData,
@@ -28,11 +29,13 @@ const SERVICES = [
 ];
 
 const MAPPING_SERVICES = [
-  CategoryMap
+  CategoryMap,
+  CommonMapService
 ];
 
 const API_DATA_SERVICES = [
-  CategoryService
+  CategoryService,
+  VendorService
 ];
 
 @NgModule({
