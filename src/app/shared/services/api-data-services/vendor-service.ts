@@ -11,10 +11,9 @@ export class VendorService {
   constructor(private httpService : HttpService, private commonMap: CommonMapService) {}
 
   // POST
-  public getVendorListByCategoryId(req){
-    const path = '/findByCriteria';
-    const request = this.commonMap.mapFindByCriteriaReq(req);
-    return this.httpService.httpPost(ServiceConfig.VENDOR_MANAGEMENT_SERVICE, path, request, null, false).pipe(
+  public getVendorListByCategoryId(categoryId){
+    const path = `/details?wedding_category_id=${categoryId}`;
+    return this.httpService.httpGet(ServiceConfig.VENDOR_MANAGEMENT_SERVICE, path, null, false).pipe(
       map(
         (res: any) => {
           // res.data = res.data.map(item =>

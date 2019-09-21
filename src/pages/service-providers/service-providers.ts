@@ -22,9 +22,8 @@ export class ServiceProvidersPage {
   serviceProviders: any = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private vendorService: VendorService) {
-
-    if (Object.keys(this.navParams.data).length > 0) {
-      this.serviceCategory = this.navParams.data;
+    if (Object.keys(navParams.data).length > 0) {
+      this.serviceCategory = navParams.data;
     } else {
       this.navCtrl.setRoot('ServiceCategoriesPage');
     }
@@ -32,7 +31,7 @@ export class ServiceProvidersPage {
   }
 
   ionViewDidLoad() {
-    if (this.serviceCategory.categoryId) {
+    if (this.serviceCategory.wedding_category_id) {
       this.initVendors();
     }
   }
@@ -62,26 +61,9 @@ export class ServiceProvidersPage {
   }
 
   private initVendors() {
-    const req = {
-      offset: 0,
-      limit: 10,
-      searchKeys : [
-        'categoryId'
-      ],
-      operators : [
-        '='
-      ],
-      values : [
-        this.serviceCategory.categoryId
-      ],
-      statuses: [
-        MainConfig.statusList.APPROVED
-      ]
-
-    };
-    this.vendorService.getVendorListByCategoryId(req).subscribe((response: any) => {
+    this.vendorService.getVendorListByCategoryId(this.serviceCategory.wedding_category_id).subscribe((response: any) => {
       if (response) {
-        this.serviceProviders = response.data;
+        this.serviceProviders = response;
       }
     });
   }

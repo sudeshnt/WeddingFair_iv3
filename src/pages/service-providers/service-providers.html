@@ -1,6 +1,4 @@
-<!--- Theme Parallax - New list -->
 <ion-header header-ios>
-  <!--<ion-navbar transparent>-->
   <ion-navbar transparent [ngClass]="{'active': isClassActive()}">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -10,33 +8,28 @@
 </ion-header>
 
 <ion-content elastic-header>
-  <!-- Parallax Big Image -->
-  <div background-size id="elastic-header" [ngStyle]="{'background-image': 'url(' + AppConfig.imagesPath + serviceCategory.imageUrl + ')'}">
-    <!--Parallax Header Top-->
+  <div background-size id="elastic-header" [ngStyle]="{'background-image': 'url(' + serviceCategory.image + ')'}">
     <div parallax-header>
-      <!--Parallax Subtitle -->
-      <!--Parallax Title -->
-      <h3 no-margin parallax-title>{{serviceCategory.name}}</h3>
-      <h2 no-margin parallax-subtitle>
+      <h3 no-margin parallax-title>{{serviceCategory.category_name}}</h3>
+      <h2 no-margin parallax-subtitle *ngIf="serviceCategory.description">
         {{serviceCategory.description.length > 150 ? serviceCategory.description.substring(0, 150) + '...' : serviceCategory.description}}
       </h2>
     </div>
   </div>
-  <!--Content-->
   <ion-grid no-padding>
     <ion-row>
       <ion-col col-12>
         <ion-list no-margin>
-          <ion-item item-bcg border no-lines *ngFor="let serviceProvider of serviceProviders">
-            <!--Content Avatar-->
+          <ion-item item-bcg border no-lines *ngFor="let serviceProvider of serviceProviders"
+            [navPush]="'ServiceProviderPage'" [navParams]="{
+              'serviceCategory': serviceCategory,
+              'serviceProvider': serviceProvider
+            }">
             <ion-thumbnail item-start>
-              <img [src]="AppConfig.imagesPath + serviceProvider.logoUrl" alt="avatar">
+              <img [src]="serviceProvider.logo" alt="avatar">
             </ion-thumbnail>
-            <!--Content Title-->
-            <h2 no-margin item-title>{{serviceProvider.name}}</h2>
-            <!--Content Subtitle-->
+            <h2 no-margin item-title>{{serviceProvider.shop_name}}</h2>
             <h3 item-subtitle text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <!--Content Badge-->
             <ion-badge class="badge-light" item-end>READ</ion-badge>
           </ion-item>
         </ion-list>

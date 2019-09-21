@@ -1,4 +1,3 @@
-<!--Google card components-->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -7,18 +6,20 @@
     <ion-title text-left>Categories Page</ion-title>
   </ion-navbar>
 </ion-header>
-<!--Content-->
 <ion-content>
-  <!--Theme Google Card - Full Image Cards-->
   <ion-grid no-padding>
-    <!--<countdown [text]="text" units="Days | Hours | Minutes | Seconds"  end="August 22, 2019"></countdown>-->
     <ion-row card-background-page padding-horizontal>
       <ion-col no-padding col-12 col-md-12 col-lg-6 *ngFor="let category of categories">
-        <ion-card [ngStyle]="{'background-image': 'url(' + AppConfig.imagesPath + category.imageUrl + ')'}"
+        <ion-card [ngStyle]="{'background-image': 'url(' + category.image + ')'}"
                   [navPush]="'ServiceProvidersPage'" [navParams]="category" background-size text-left>
-          <!-- Card Title-->
-          <div text-wrap card-title>{{category.name}}</div>
-          <!-- Card Subtitle-->
+          <ion-row text-wrap card-title>
+            {{category.category_name}}
+            <div align-self-end>
+              <ion-icon icon-small name="contact" item-end>
+                {{category.count}}
+              </ion-icon>
+            </div>
+          </ion-row>
           <div text-wrap card-subtitle *ngIf="category.description">
             {{category.description.length > 130 ? category.description.substring(0, 130) + '...' : category.description}}
           </div>
@@ -26,5 +27,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>

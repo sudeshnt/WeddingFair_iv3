@@ -21,6 +21,9 @@ export class ServiceProviderPage {
   active: boolean;
   headerImage:any = "";
 
+  serviceCategory: any;
+  serviceProvider: any;
+
   data : any = {
     headerTitle: 'GMAPS + Location  Details',
     title: 'Museum of Modern Art',
@@ -63,6 +66,9 @@ export class ServiceProviderPage {
     }
   };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(navParams);
+    this.serviceCategory = navParams.get('serviceCategory');
+    this.serviceProvider = navParams.get('serviceProvider');
   }
 
   ionViewDidLoad() {
@@ -96,7 +102,7 @@ export class ServiceProviderPage {
   subscribeToIonScroll() {
     if (this.content != null && this.content.ionScroll != null) {
       this.content.ionScroll.subscribe((d) => {
-        if (d.scrollTop < 200 ) {
+        if (d.scrollTop < 200) {
           this.active = false;
           return;
         }

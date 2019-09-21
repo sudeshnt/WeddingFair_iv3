@@ -11,7 +11,7 @@ export class CategoryService {
 
   //GET
   public getApprovedServiceCategories(){
-    const path = '/categories/approved';
+    const path = '/details';
     return this.httpService.httpGet(ServiceConfig.CATEGORY_MANAGEMENT_SERVICE, path, {}, null).pipe(
       map(
         (res: any) => {

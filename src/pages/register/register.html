@@ -1,4 +1,3 @@
-<!-- Themes Register + logo -->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -7,7 +6,6 @@
     <ion-title text-left>Register Page</ion-title>
   </ion-navbar>
 </ion-header>
-<!--Content -->
 <ion-content>
   <ion-grid>
     <ion-row padding-horizontal align-items-start>
@@ -63,7 +61,6 @@
             </form>
           </div>
           <div *ngSwitchCase="'vendor'">
-            <!--page 1-->
             <form>
               <ion-item no-padding>
                 <ion-label color="dark" stacked>Shop Name</ion-label>
@@ -92,7 +89,6 @@
                 <ion-label color="dark" stacked>password</ion-label>
                 <ion-input name="password" [(ngModel)]="vendor.password" placeholder="enter your password" type="password"></ion-input>
               </ion-item>
-              <!--page 2-->
               <ion-item no-padding>
                 <ion-label color="dark" stacked>Business Reg. Number</ion-label>
                 <ion-input name="businessRegNumber" [(ngModel)]="vendor.businessRegNumber" placeholder="shop's business reg. number" type="text"></ion-input>

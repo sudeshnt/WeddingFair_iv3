@@ -25,6 +25,13 @@ service-categories {
       width: 95%;
       color: theme-colors('textColors', 'secondaryBase') !important;
     }
+    icon-small: {
+      color: 'white'
+    }
+    card-title {
+      width: 100%;
+      color: 'white'
+    }
   }
 
 

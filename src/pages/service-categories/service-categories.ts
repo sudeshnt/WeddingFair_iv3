@@ -22,11 +22,7 @@ export class ServiceCategoriesPage {
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private categoryService: CategoryService) {
-    for(let i=0 ; i<10 ; i++){
-      this.array.push(i);
-    }
-    this.categories = MainConfig.categoryList;
-    console.log(this.categories);
+    
   }
 
   ionViewDidLoad() {
@@ -36,7 +32,8 @@ export class ServiceCategoriesPage {
   private initServiceCategories() {
     this.categoryService.getApprovedServiceCategories().subscribe((response: any) => {
       if (response) {
-        this.categories = response.data;
+        this.categories = response;
+        console.log(this.categories);
       }
     });
   }
